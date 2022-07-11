@@ -3,11 +3,11 @@
 using namespace std;
 
 int main(){
-    int n1, n2, result, i = 0;
+	int n1, n2, result, i = 0;
 	bool aux = true;
-    cin>>n1>>n2;
+	cin>>n1>>n2;
 
-    while (aux != false){
+	while (aux != false){
 		if (i * n2 == n1){
 			result = i;
 			aux = false;
@@ -21,5 +21,5 @@ int main(){
 	
 	cout<<result<<endl;
 	
-    return 0;
+	return 0;
 }
