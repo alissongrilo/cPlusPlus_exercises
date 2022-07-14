@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void respostaCerta(int resposta, int preto, int branco, int i){
+void respostaCerta(int resposta, int preto, int branco){
 	if (preto == 1 and branco == 4){
 		if (resposta == 1){
 			cout<<"A"<<endl;
@@ -44,7 +44,7 @@ char retornaAlternativa(int qtdQuestao){
 			
 			//Verifica se houve apenas 1 valor preto e 4 brancos
 			if (j == 5){
-				respostaCerta(resposta, preto, branco, i);
+				respostaCerta(resposta, preto, branco);
 			}
 			
 			j++;
