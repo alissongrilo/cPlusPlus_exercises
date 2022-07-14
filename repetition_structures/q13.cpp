@@ -1,28 +1,38 @@
 #include <iostream>
 using namespace std;
 
-void respostaCerta(int resposta, int preto, int branco){
+void imprimeVetor(char v[], int qtdQuestao){
+	int i = 0;
+	while (i < qtdQuestao){
+		cout<<v[i]<<endl;
+		i++;
+	}
+}
+
+
+char respostaCerta(int resposta, int preto, int branco){
 	if (preto == 1 and branco == 4){
 		if (resposta == 1){
-			cout<<"A"<<endl;
+			return 'A';
 		} else if (resposta == 2){
-			cout<<"B"<<endl;
+			return 'B';
 		} else if (resposta == 3){
-			cout<<"C"<<endl;
+			return 'C';
 		} else if (resposta == 4){
-			cout<<"D"<<endl;
+			return 'D';
 		} else if (resposta == 5){
-			cout<<"E"<<endl;
+			return 'E';
 		}  
 	} else {
-		cout<<"*"<<endl;
+		return '*';
 	}
+	return 0;
 }
 
 
 char retornaAlternativa(int qtdQuestao){
 	int i = 0, j = 1, valores, preto, branco, resposta;
-	
+	char v[qtdQuestao];
 	while (i < qtdQuestao){
 		
 		//Inicializacao de variaveis antes do laco
@@ -42,15 +52,18 @@ char retornaAlternativa(int qtdQuestao){
 				branco += 1;
 			}
 			
-			//Verifica se houve apenas 1 valor preto e 4 brancos
+			//Verifica as 5 alternativas foram informadas
+			//e se houve apenas 1 valor preto e 4 brancos
 			if (j == 5){
-				respostaCerta(resposta, preto, branco);
+				v[i] = respostaCerta(resposta, preto, branco);
 			}
 			
 			j++;
 		}
 		i++;
 	}
+	
+	imprimeVetor(v, qtdQuestao);
 	return 0;
 }
 
